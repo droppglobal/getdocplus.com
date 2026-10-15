@@ -1,0 +1,53 @@
+html[dir=rtl]{
+  .mfp-wrap .mfp-dialog .lightboxWraper {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  .mfp-dialog .lightbox-body .container-fluid {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .form-group.has-feedback > i.form-control-feedback {
+    left: 25px;
+    right: unset;
+  }
+  .app-default-captcha .form-control-feedback {
+    left: calc(50% + 20px);
+    right: unset;
+  }
+
+  .banner-section{
+    form{
+      button{
+        right:388px !important;
+      }
+    }
+  }
+  .footer_section{
+    form{
+      button{
+        right:388px !important;
+      }
+    }
+  }
+  .form-group .sp-colorize-container {
+    margin-right: 0px;
+  }
+
+  .form-group .material-switch > label::after {
+    left: -40px;
+  }
+  .form-group .material-switch > input[type=checkbox]:checked + label::after {
+    left: -20px;
+  }
+
+  .still-need-section .text-center.pt-3 {
+    text-align: left !important;
+  }
+  .form-group .material-switch {
+    margin-left: 3.25rem;
+  }
+}

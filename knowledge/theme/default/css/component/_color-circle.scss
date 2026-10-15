@@ -1,0 +1,96 @@
+.color-circle{
+  width:20px;
+  height:20px;
+  border:2px solid #fff;
+  display: inline-block;
+  box-shadow: 0 0 5px #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dropdown-toggle >.color-circle{
+    margin-bottom:-6px;
+}
+.color-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 10px;
+  justify-content: center;
+  .bg-theme-default {
+    &:hover {
+      background: var(--admin-theme-default);
+    }
+  }
+
+  .bg-theme-purple {
+    &:hover {
+      background: var(--admin-theme-purple);
+    }
+  }
+  .bg-theme-orange {
+    &:hover {
+      background: var(--admin-theme-orange);
+    }
+  }
+
+  .bg-theme-blue {
+    &:hover {
+      background: var(--admin-theme-blue);
+    }
+  }
+
+  .bg-theme-black {
+    &:hover {
+      background: var(--admin-theme-black);
+    }
+  }
+
+  .bg-theme-red {
+    &:hover {
+      background: var(--admin-theme-red);
+    }
+  }
+  .bg-theme-green {
+    &:hover {
+      background: var(--admin-theme-green);
+    }
+  }
+
+  .bg-theme-pink {
+    &:hover {
+      background: var(--admin-theme-pink);
+    }
+  }
+
+  .bg-theme-gray {
+    &:hover {
+      background: var(--admin-theme-gray);
+    }
+  }
+
+  .bg-theme-cyan {
+    &:hover {
+      background: var(--admin-theme-cyan);
+
+    }
+  }
+
+
+  .color-circle {
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    &.chk-selected, &:hover {
+      &::before {
+        color: #fff;
+        content: "\f00c";
+      }
+    }
+  }
+}

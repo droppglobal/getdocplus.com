@@ -1,0 +1,57 @@
+<?php 
+/**
+ * Version 1.0.0
+ * Creation date: 29/Nov/2017
+ * @Written By: S.M. Sarwar Hasan
+ * Sarwar Hasan
+ */
+defined('BASEPATH') OR exit('No direct script access allowed');
+ APP_Controller::LoadConfirmController();    
+class Iplist_confirm extends APP_ConfirmController{
+    
+	       
+	    function __construct(){
+            parent::__construct();            
+            $this->CheckPageAccess();
+        }
+    
+        function iplist_delete($param=""){
+            
+            $this->SetConfirmResponse(false, __("Delete is temporary disabled"));
+            return;
+            if(empty($param)){
+                $this->SetConfirmResponse(false, __("Invalid Request"));
+                return;
+            }
+            $mr=new Miplist();
+            $mr->ip($param);
+            if($mr->Select()){
+                if(Miplist::DeleteByKeyValue("ip",$param)){
+                    AddLog("D","ip={$param}", "l003","Iplist_confirm");
+                    $this->SetConfirmResponse(true, __("Successfully deleted"));
+                }else{
+                    $this->SetConfirmResponse(false,__("Delete failed try again"));
+                }
+            }
+        }       
+	    function iplist_reset($param=""){
+           
+            if(empty($param)){
+                 $this->SetConfirmResponse(false, __("Invalid Request"));
+                 return;
+            }           
+            $mr=new Miplist();           
+            $mr->ip($param);
+            if($mr->Select()){
+                if(Miplist::ResetIP($param)){
+                    AddLog("D","ip={$param}", "l003","Iplist_reset");
+                    $this->SetConfirmResponse(true, __("Successfully deleted"));
+                }else{
+                    $this->SetConfirmResponse(false,__("Delete failed try again"));
+                }
+            }
+        }
+                        
+    
+}
+?>

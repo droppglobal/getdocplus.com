@@ -1,0 +1,16 @@
+
+/* Styling for the layout of the chat bubble. Width, height, border, position and radius of the chat bubble */
+.bpw-layout {
+  width: 460px !important;
+  height: 75vh;
+}
+/* Responsive design rules for devices with width less than or equal to 767px */
+@media screen and (max-device-width: 767px) {
+  .bpw-layout {
+    width: 100% !important;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}

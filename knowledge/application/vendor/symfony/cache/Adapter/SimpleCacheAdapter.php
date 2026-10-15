@@ -1,0 +1,68 @@
+<?php
+
+
+
+namespace Symfony\Component\Cache\Adapter;
+
+use Psr\SimpleCache\CacheInterface;
+
+/**
+ * @author Nicolas Grekas <p@tchwork.com>
+ */
+class SimpleCacheAdapter extends AbstractAdapter
+{
+    private $pool;
+    private $miss;
+
+    public function __construct(CacheInterface $pool, $namespace = '', $defaultLifetime = 0)
+    {
+        parent::__construct($namespace, $defaultLifetime);
+
+        $this->pool = $pool;
+        $this->miss = new \stdClass();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doFetch(array $ids)
+    {
+        foreach ($this->pool->getMultiple($ids, $this->miss) as $key => $value) {
+            if ($this->miss !== $value) {
+                yield $key => $value;
+            }
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doHave($id)
+    {
+        return $this->pool->has($id);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doClear($namespace)
+    {
+        return $this->pool->clear();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doDelete(array $ids)
+    {
+        return $this->pool->deleteMultiple($ids);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doSave(array $values, $lifetime)
+    {
+        return $this->pool->setMultiple($values, 0 === $lifetime ? null : $lifetime);
+    }
+}

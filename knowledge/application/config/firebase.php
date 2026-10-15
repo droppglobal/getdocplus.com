@@ -1,0 +1,2 @@
+<?php
+$config['google_firebase_api_key']="AAAAlNmXnGI:APA91bH_hxb3chLvKJNoGNWLpTJGHXuNXvan8HzZv6DT4r3RtC1OdiZ26_RPWV5KlV7Mic9ErR-9Xfcj7o-mC4g8Ks88TjTnowMLiaeAR96hfrBy_gML5qA38rgGa0SGJWgVxS5stBt-";

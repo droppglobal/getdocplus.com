@@ -1,0 +1,9 @@
+[11-Aug-2025 10:27:07 UTC] PHP Warning:  require(/home/docplush/public_html/vendor/composer/../../app/Helpers/helpers.php): Failed to open stream: No such file or directory in /home/docplush/public_html/vendor/composer/autoload_real.php on line 39
+[11-Aug-2025 10:27:07 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/docplush/public_html/vendor/composer/../../app/Helpers/helpers.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/docplush/public_html/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/docplush/public_html/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/docplush/public_html/vendor/autoload.php(22): ComposerAutoloaderInitba5d87d50b81e1a083008c707506295b::getLoader()
+#2 /home/docplush/public_html/public/index.php(34): require('/home/docplush/...')
+#3 /home/docplush/public_html/index.php(19): require_once('/home/docplush/...')
+#4 {main}
+  thrown in /home/docplush/public_html/vendor/composer/autoload_real.php on line 39
